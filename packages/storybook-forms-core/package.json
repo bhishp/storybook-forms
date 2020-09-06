@@ -1,0 +1,30 @@
+{
+  "name": "storybook-forms-core",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Core code used by specific form decorators",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "tsc",
+    "build:watch": "npm run build -- --watch"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "devDependencies": {
+    "@storybook/api": "^5.2.8",
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-json-tree": "^0.6.11",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "typescript": "^4.0.2"
+  },
+  "author": "bhishp",
+  "license": "MIT",
+  "dependencies": {
+    "react-json-tree": "^0.11.2"
+  }
+}

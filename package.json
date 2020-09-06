@@ -1,0 +1,20 @@
+{
+  "name": "storybook-forms",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bhishp/storybook-forms/"
+  },
+  "typings": "dist/index.d.ts",
+  "scripts": {},
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "dependencies": {
+    "prettier": "^2.1.1"
+  }
+}
