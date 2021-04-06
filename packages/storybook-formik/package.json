@@ -21,6 +21,9 @@
     "dist/**/*",
     "register.js"
   ],
+  "dependencies": {
+    "storybook-forms-core": "*"
+  },
   "peerDependencies": {
     "formik": "^1.0.0||^2.0.0",
     "react": "*",
@@ -51,8 +54,5 @@
     "forms"
   ],
   "author": "bhishp",
-  "license": "MIT",
-  "dependencies": {
-    "storybook-forms-core": "*"
-  }
+  "license": "MIT"
 }

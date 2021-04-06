@@ -9,7 +9,7 @@ import {
 import { Form, Formik } from 'formik';
 import { ConfigWithoutSubmit, PARAMETER_NAME } from './types';
 
-export const withForms = makeDecorator({
+export const withFormik = makeDecorator({
   name: DECORATOR_NAME,
   parameterName: PARAMETER_NAME,
   skipIfNoParametersOrOptions: false,
@@ -41,7 +41,5 @@ export const withForms = makeDecorator({
   },
 });
 
-export const withFormik = withForms;
-export default withForms;
-// export * from 'storybook-forms-core';
+export default withFormik;
 export * from './types';
