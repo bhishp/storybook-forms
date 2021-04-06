@@ -11,7 +11,7 @@ import {
   FeedbackSubform,
   feedbackInitialValues, PersonalInfo, ProfessionalInfo, Feedback,
 } from './example';
-import { DecoratorParams } from '../src/shared';
+import { DecoratorParams } from '../src/types';
 
 const meta: Meta = {
   title: 'WithFormik/Subforms'

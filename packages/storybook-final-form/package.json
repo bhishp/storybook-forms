@@ -1,7 +1,7 @@
 {
-  "name": "storybook-formik",
-  "version": "2.1.5",
-  "description": "A storybook addon that allows you to use components in your stories that rely on Formik context and see internal Formik state in a panel.",
+  "name": "storybook-final-form",
+  "version": "0.0.0",
+  "description": "A storybook addon that allows you to use components in your stories that rely on FinalForm context and see internal FinalForm state in a panel.",
   "repository": {
     "type": "git",
     "url": "https://github.com/bhishp/storybook-forms"
@@ -13,13 +13,9 @@
     "clean": "rm -rf dist",
     "build": "tsc",
     "build:watch": "npm run build -- --watch",
-    "deploy": "npm run build-storybook && gh-pages -d build-sb",
-    "preversion": "npm run clean && npm run build && npm run deploy",
-    "postversion": "git push && git push --tags && npm publish",
+    "format": "prettier --write 'src/**/*' 'test/**/*' 'README.md' '/docs/**/*.md'",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "rm -rf build-sb && build-storybook -o build-sb",
-    "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*' 'stories/**/*' 'test/**/*' 'README.md' '/docs/**/*.md'",
-    "chromatic": "npx chromatic --project-token 81997269ab40"
+    "build-storybook": "build-storybook"
   },
   "files": [
     "dist/**/*",
@@ -29,12 +25,13 @@
     "storybook-forms-core": "*"
   },
   "peerDependencies": {
-    "formik": "^1.0.0||^2.0.0",
+    "final-form": "^4.0.0",
     "react": "*",
-    "react-dom": "*"
+    "react-dom": "*",
+    "react-final-form": "^6.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.4",
+    "@babel/core": "^7.11.6",
     "@storybook/addon-actions": "^6.2.1",
     "@storybook/addon-links": "^6.2.1",
     "@storybook/addons": "^6.2.1",
@@ -45,19 +42,21 @@
     "@types/yup": "^0.26.26",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
-    "chromatic": "^5.6.3",
-    "formik": "^2.0.6",
-    "gh-pages": "^2.1.1",
+    "final-form": "^4.20.1",
     "prettier": "^1.19.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-final-form": "^6.5.0",
     "typescript": "^4.2.3",
     "yup": "^0.27.0"
   },
   "keywords": [
     "storybook",
     "react",
-    "formik",
+    "final-form",
+    "finalform",
+    "react-final-form",
+    "reactfinalform",
     "form",
     "forms",
     "storybook-addon",
@@ -67,7 +66,7 @@
   "author": "bhishp",
   "license": "MIT",
   "storybook": {
-    "icon": "https://pbs.twimg.com/profile_images/1148688127252471810/-UcA36Bw_400x400.png",
-    "displayName": "Formik"
+    "icon": "",
+    "displayName": "Final Form"
   }
 }
