@@ -22,14 +22,14 @@ export const withFinalForm = makeDecorator({
 
     return (
       <Form
-        onSubmit={(v) => {
+        onSubmit={v => {
           channel.emit(EVT_ON_SUBMIT, v);
           return {};
         }}
         {...formProps}
         initialValues={initialValues}
       >
-        {(props) => {
+        {props => {
           channel.emit(EVT_RENDER, props);
           if (!submitter) {
             submitter = props.handleSubmit;

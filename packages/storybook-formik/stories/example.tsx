@@ -51,7 +51,9 @@ export const personalInfoValidationSchema = Yup.object({
   lastName: Yup.string()
     .max(20, 'Must be 20 characters or less')
     .required('Required'),
-  email: Yup.string().email('Invalid email address').required('Required'),
+  email: Yup.string()
+    .email('Invalid email address')
+    .required('Required'),
 });
 
 export const professionalInfoValidationSchema = Yup.object({
