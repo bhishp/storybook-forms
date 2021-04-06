@@ -29,7 +29,7 @@ export const withFormik = makeDecorator({
         {...formikConfig}
         initialValues={initialValues}
       >
-        {props => {
+        {(props) => {
           channel.emit(EVT_RENDER, props);
           if (!submitter) {
             submitter = props.submitForm;

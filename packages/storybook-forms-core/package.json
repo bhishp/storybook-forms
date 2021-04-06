@@ -1,9 +1,9 @@
 {
   "name": "storybook-forms-core",
   "version": "0.0.0",
-  "private": true,
   "description": "Core code used by specific form decorators",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "clean": "rm -rf dist",
     "build": "tsc",
