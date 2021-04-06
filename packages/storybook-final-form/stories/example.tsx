@@ -3,24 +3,42 @@ import { Form, Field, useField } from 'react-final-form';
 import * as Yup from 'yup';
 import { makeFinalFormValidator } from './lib';
 
-export const personalInfoInitialValues = {
+export interface PersonalInfo {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+}
+
+export const personalInfoInitialValues: PersonalInfo = {
   firstName: 'Initial',
   lastName: '',
   email: '',
 };
 
-export const professionalInfoInitialValues = {
+export interface ProfessionalInfo {
+  jobType?: string;
+  acceptedTerms?: boolean;
+}
+
+export const professionalInfoInitialValues: ProfessionalInfo = {
   jobType: '',
   acceptedTerms: false,
 };
 
-export const feedbackInitialValues = {
+export interface Feedback extends PersonalInfo, ProfessionalInfo {
+  rating?: number;
+  remarks?: string;
+}
+
+export const feedbackInitialValues: Feedback = {
   ...personalInfoInitialValues,
   rating: 1,
   remarks: '',
 };
 
-const initialValues = {
+export type SignupInfo = PersonalInfo & ProfessionalInfo;
+
+const initialValues: SignupInfo = {
   ...personalInfoInitialValues,
   ...professionalInfoInitialValues,
 };
@@ -49,15 +67,6 @@ export const professionalInfoValidationSchema = Yup.object({
 const validationSchema = Yup.object()
   .concat(personalInfoValidationSchema)
   .concat(professionalInfoValidationSchema);
-
-const onSubmit = async (values: any) => {
-  await new Promise(res => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      res();
-    }, 400);
-  });
-};
 
 const style: { [key: string]: CSSProperties } = {
   label: {
@@ -151,7 +160,7 @@ export const PersonalInfoSubForm = () => (
       label="Email Address"
       name="email"
       type="email"
-      placeholder="jane@formik.com"
+      placeholder="jane@finalform.com"
     />
   </>
 );
@@ -174,11 +183,20 @@ export const FeedbackSubform = () => (
   </>
 );
 
+const onSubmit = async (values: any) => {
+  await new Promise<void>(res => {
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+      res();
+    }, 400);
+  });
+};
+
 export const SignupForm = () => {
   return (
     <>
       <h1>Subscribe!</h1>
-      <Form
+      <Form<SignupInfo>
         initialValues={initialValues}
         validate={makeFinalFormValidator(validationSchema)}
         onSubmit={onSubmit}

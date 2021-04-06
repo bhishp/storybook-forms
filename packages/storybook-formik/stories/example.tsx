@@ -67,13 +67,6 @@ const validationSchema = Yup.object()
   .concat(personalInfoValidationSchema)
   .concat(professionalInfoValidationSchema);
 
-const onSubmit = (values: any, { setSubmitting }: any) => {
-  setTimeout(() => {
-    alert(JSON.stringify(values, null, 2));
-    setSubmitting(false);
-  }, 400);
-};
-
 const style: { [key: string]: CSSProperties } = {
   label: {
     display: 'block',
@@ -193,6 +186,13 @@ export const FeedbackSubform = () => (
     <Field style={style.field} component="textarea" name="remarks" />
   </>
 );
+
+const onSubmit = (values: any, { setSubmitting }: any) => {
+  setTimeout(() => {
+    alert(JSON.stringify(values, null, 2));
+    setSubmitting(false);
+  }, 400);
+};
 
 export const SignupForm = () => {
   return (
